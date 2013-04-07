@@ -37,9 +37,12 @@ bool TessdataManager::Init(const char *data_file_name, int debug_level) {
   debug_level_ = debug_level;
   data_file_ = fopen(data_file_name, "rb");
   if (data_file_ == NULL) {
-    tprintf("Error opening data file %s\n", data_file_name);
-    tprintf("Please make sure the TESSDATA_PREFIX environment variable is set "
-            "to the parent directory of your \"tessdata\" directory.\n");
+    // WILLUS MOD:  Insert "if (debug_level_)" line below to avoid printing error msg.
+    if (debug_level_) {
+      tprintf("Error opening data file %s\n", data_file_name);
+      tprintf("Please make sure the TESSDATA_PREFIX environment variable is set "
+              "to the parent directory of your \"tessdata\" directory.\n");
+    }
     return false;
   }
   fread(&actual_tessdata_num_entries_, sizeof(inT32), 1, data_file_);

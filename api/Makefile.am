@@ -61,7 +61,8 @@ libtesseract_la_LIBADD = \
 
 libtesseract_la_LDFLAGS += -version-info $(GENERIC_LIBRARY_VERSION)
 
-bin_PROGRAMS = tesseract
+# Comment out bin_PROGRAMS as we don't need it and it breaks build
+#bin_PROGRAMS = tesseract
 tesseract_SOURCES = $(top_srcdir)/api/tesseractmain.cpp
 tesseract_LDADD = libtesseract.la
 tesseract_CPPFLAGS = $(AM_CPPFLAGS)

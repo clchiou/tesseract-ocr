@@ -601,3 +601,6 @@ TESS_API BOOL TESS_CALL TessResultIteratorSymbolIsDropcap(const TessResultIterat
 {
     return handle->SymbolIsDropcap() ? TRUE : FALSE;
 }
+
+// Import Willus' C API.
+#include "tesscapi.cpp"
