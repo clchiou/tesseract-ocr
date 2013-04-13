@@ -18,9 +18,9 @@ export EXTRA_CONFIGURE_ARGS="--disable-graphics"
 
 CustomFixupOfConfigureScript() {
   ChangeDir ${NACL_PACKAGES_REPOSITORY}/${PACKAGE_DIR}
-  # Hack for pixCreate check.
-  sed --in-place s'/^LIBS="-llept  $LIBS"/LIBS="-llept  $LIBS  -lnacl-mounts -lnosys -lstdc++ -lpthread -lz -ljpeg"/' \
-    configure
+  # XXX Hack for passing ./configure pixCreate check.
+  local MORE_LIBS="-lnosys -lz -ljpeg"
+  sed --in-place s/'^LIBS="-llept  $LIBS'/"& ${MORE_LIBS}"/ configure
 }
 
 CustomPackageInstall() {
