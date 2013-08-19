@@ -30,8 +30,9 @@ CustomPackageInstall() {
   CustomFixupOfConfigureScript
   DefaultConfigureStep
   DefaultBuildStep
+  DefaultTranslateStep
+  DefaultValidateStep
   DefaultInstallStep
-  DefaultCleanUpStep
 }
 
 CustomPackageInstall
