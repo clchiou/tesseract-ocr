@@ -16,4 +16,7 @@ libtesseract_viewer_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION)
 endif
 
 libtesseract_viewer_la_SOURCES = \
-    scrollview.cpp svmnode.cpp svutil.cpp svpaint.cpp
+    scrollview.cpp svmnode.cpp svpaint.cpp
+if !GRAPHICS_DISABLED
+libtesseract_viewer_la_SOURCES += svutil.cpp
+endif

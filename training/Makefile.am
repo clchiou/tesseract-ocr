@@ -24,7 +24,8 @@ libtesseract_training_la_SOURCES = \
 libtesseract_tessopt_la_SOURCES = \
     tessopt.cpp
 
-bin_PROGRAMS = ambiguous_words classifier_tester cntraining combine_tessdata dawg2wordlist mftraining shapeclustering unicharset_extractor wordlist2dawg
+# Comment out bin_PROGRAMS as we don't need it and it breaks build
+#bin_PROGRAMS = ambiguous_words classifier_tester cntraining combine_tessdata dawg2wordlist mftraining shapeclustering unicharset_extractor wordlist2dawg
 
 ambiguous_words_SOURCES = ambiguous_words.cpp
 ambiguous_words_LDADD = \
